@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sebastian Peterlin"]
   spec.email         = ["speterlin@gmail.com"]
 
-  spec.summary       = %q{Textcomplete which can be used for autocompleting search fields, tags in textareas, and other textfield inputs!}
-  spec.description   = %q{Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.}
+  spec.summary       = %q{Textcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs!}
+  spec.description   = %q{Textcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.}
   spec.homepage      = "http://github.com/speterlin/jquery_textcomplete"
   spec.license       = "MIT"
 
@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  # to be able to use sass
+  # to be able to use sass, not sure if I need sass gem, maybe replace rails with railties
   spec.add_dependency "rails", "~> 5.0"
-  spec.add_dependency "sass", "~> 5.0"
-  spec.add_dependency "sass-rails", "~> 3.0"
+  spec.add_dependency "sass", "~> 3.0"
+  spec.add_dependency "sass-rails", "~> 5.0"
 end
