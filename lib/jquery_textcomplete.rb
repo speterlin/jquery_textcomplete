@@ -1,5 +1,8 @@
 require "jquery_textcomplete/version"
 
 module JqueryTextcomplete
-  # Your code goes here...
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
 end

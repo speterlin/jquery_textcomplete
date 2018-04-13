@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sebastian Peterlin"]
   spec.email         = ["speterlin@gmail.com"]
 
-  spec.summary       = %q{will complete.}
-  spec.description   = %q{will complete.}
+  spec.summary       = %q{Textcomplete which can be used for autocompleting search fields, tags in textareas, and other textfield inputs!}
+  spec.description   = %q{Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.}
   spec.homepage      = "http://github.com/speterlin/jquery_textcomplete"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "http://rubygems.org"
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
@@ -30,4 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  # to be able to use sass
+  spec.add_dependency "rails"
+  spec.add_dependency "sass"
+  spec.add_dependency "sass-rails"
 end
