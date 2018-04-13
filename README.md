@@ -22,13 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-Include in your application.js file
+Include in your application.js file:
 
-//= require jquery.textcomplete
+    //= require jquery.textcomplete
 
-Include in your application.scss file
+Include in your application.scss file:
 
-//= require jquery.textcomplete
+    //= require jquery.textcomplete
 
 ## Development
 
