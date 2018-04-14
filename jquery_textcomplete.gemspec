@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sebastian Peterlin"]
   spec.email         = ["speterlin@gmail.com"]
 
-  spec.summary       = %q{Textcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs!}
-  spec.description   = %q{Textcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.}
+  spec.summary       = %q{JqueryTextcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs!}
+  spec.description   = %q{JqueryTextcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.}
   spec.homepage      = "http://github.com/speterlin/jquery_textcomplete"
   spec.license       = "MIT"
 

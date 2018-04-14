@@ -1,6 +1,8 @@
 # JqueryTextcomplete
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jquery_textcomplete`. To experiment with that code, run `bin/console` for an interactive prompt.
+JqueryTextcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.
+
+<!-- Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jquery_textcomplete`. To experiment with that code, run `bin/console` for an interactive prompt. -->
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -29,6 +31,8 @@ Include in your application.js file:
 Include in your application.scss file:
 
     //= require jquery.textcomplete
+
+For more options and style customization, please, see [jQuery Textcomplete documentation](https://github.com/yuku-t/jquery-textcomplete).
 
 <!-- ## Development
 
