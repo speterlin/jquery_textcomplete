@@ -10,6 +10,12 @@
   margin: 0;
   // end
 
+  // for mobile and tablet
+  @media (max-width: 768px) {
+    width: 70%;
+    overflow: auto;
+  }
+
   li {
     border-top: 1px solid #ddd;
     padding: 2px 5px;

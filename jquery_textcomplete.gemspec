@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'jquery_textcomplete/version'
 
 Gem::Specification.new do |spec|
+  # maybe refactor, change name to jquery_textcomplete-rails
   spec.name          = "jquery_textcomplete"
   spec.version       = JqueryTextcomplete::VERSION
   spec.authors       = ["Sebastian Peterlin"]
