@@ -1,6 +1,6 @@
 # JqueryTextcomplete
 
-JqueryTextcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with acts-as-taggable-on gem for autocomplete tagging, requires Jquery.
+JqueryTextcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with [searchkick](https://github.com/ankane/searchkick) gem for returning autocomplete results and with [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) gem for autocomplete tagging. Requires Jquery.
 
 ## Installation
 
@@ -27,6 +27,61 @@ Include in your application.js file:
 Include in your application.scss file:
 
     //= require jquery.textcomplete
+
+Example usage:
+
+In View:
+
+    <script type="text/javascript">
+      addTextCompleteForHashtagsAndUsertags($('.textcomplete'));
+    </script>
+
+In application.js:
+
+    function addTextCompleteForHashtagsAndUsertags($textarea) {
+      $textarea.textcomplete([
+        {
+          // Usertag strategy
+          match: /(\s|^)@([^\s]+)$/,
+          search: function (term, callback) {
+            $.getJSON('/users/autocomplete_usertag', { query: term })
+              .done(function (resp) { callback(resp); })
+              .fail(function ()     { callback([]);   });
+          },
+          replace: function (value) {
+            return '$1' + value + ' ';
+          }
+        },
+        {
+          // Hashtag strategy
+          match: /(\s|^)#(\w+)$/,
+          search: function (term, callback) {
+            $.getJSON('/posts/autocomplete_hashtag', { query: term })
+              .done(function (resp) { callback(resp); })
+              .fail(function ()     { callback([]);   });
+          },
+          replace: function (value) {
+            return '$1' + value + ' ';
+          }
+        }
+      ]);
+    }
+
+In users_controller.rb:
+
+    def autocomplete_usertag
+      render json: User.search(params[:query], {
+        fields: ["name"],
+        limit: 10,
+        load: false,
+        misspellings: {below: 2}
+      }).map{|user| user.name.downcase.prepend('@').split(' ').join('.')}
+    end
+
+In routes.rb:
+
+    get 'autocomplete_usertag' => 'users#autocomplete_usertag', on: :collection
+
 
 For more options and style customization, please, see [jQuery Textcomplete documentation](https://github.com/yuku-t/jquery-textcomplete).
 
