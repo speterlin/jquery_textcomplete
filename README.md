@@ -30,7 +30,7 @@ Include in your application.scss file:
 
 Example usage:
 
-In View:
+In views:
 
     <script type="text/javascript">
       addTextCompleteForHashtagsAndUsertags($('.textcomplete'));
