@@ -20,13 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-Include in your application.js file:
+Include in your `application.js` file:
 
     //= require jquery.textcomplete
 
-Include in your application.scss file:
+Include in your `application.scss` file:
 
-    //= require jquery.textcomplete
+    \*= require jquery.textcomplete
 
 Example usage:
 
@@ -36,7 +36,7 @@ In views:
       addTextCompleteForHashtagsAndUsertags($('.textcomplete'));
     </script>
 
-In application.js:
+In `application.js`:
 
     function addTextCompleteForHashtagsAndUsertags($textarea) {
       $textarea.textcomplete([
@@ -67,7 +67,7 @@ In application.js:
       ]);
     }
 
-In users_controller.rb:
+In `users_controller.rb`:
 
     def autocomplete_usertag
       render json: User.search(params[:query], {
@@ -78,7 +78,7 @@ In users_controller.rb:
       }).map{|user| user.name.downcase.prepend('@').split(' ').join('.')}
     end
 
-In routes.rb:
+In `routes.rb`:
 
     get 'autocomplete_usertag' => 'users#autocomplete_usertag', on: :collection
 
