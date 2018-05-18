@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sebastian Peterlin"]
   spec.email         = ["speterlin@gmail.com"]
 
-  spec.summary       = %q{JqueryTextcomplete is a Ruby on Rails gem enabling text autocomplete in search fields, tags in textareas, and other textfield inputs!}
-  spec.description   = %q{JqueryTextcomplete can be used for autocompleting search fields, tags in textareas, and other textfield inputs! Compatible with Ruby on Rails applications, can be used in conjunction with searchkick gem for returning autocomplete results and with acts-as-taggable-on gem for autocomplete tagging. Requires Jquery.}
+  spec.summary       = %q{JqueryTextcomplete is a Ruby on Rails gem enabling text autocomplete in search fields, textareas, and other textfield inputs!}
+  spec.description   = %q{JqueryTextcomplete is a Ruby on Rails gem enabling text autocomplete in search fields, textareas, and other textfield inputs! Can be used in conjunction with searchkick gem for suggesting autocomplete results and with acts-as-taggable-on gem for autocomplete tagging. Requires Jquery.}
   spec.homepage      = "http://github.com/speterlin/jquery_textcomplete"
   spec.license       = "MIT"
 
@@ -37,5 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "sass", "~> 3.0"
   spec.add_dependency "sass-rails", "~> 5.0"
   # maybe add spec.add_dependency 'jquery-rails' and spec.add_dependency 'jquery-ui-rails'
-  
+
 end

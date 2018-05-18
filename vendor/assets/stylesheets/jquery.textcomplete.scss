@@ -1,6 +1,7 @@
 // Sample
 
 .dropdown-menu {
+  // maybe refactor and get rid of border here and in li
   border: 1px solid #ddd;
   background-color: #fff;
 
@@ -24,12 +25,26 @@
       border-top: none;
     }
 
+    // refactor, for when cursor is over li element or li element is active, would like to get rid of gap between li and a and not have 3 repeats of same background-color
     &:hover, &.active {
       background-color: #6eb7db;
+
+      // for when cursor is not over a element but li element has cursor over it or is active and still want a element highlighted, only need this (and li.textcomplete-item a:hover) since there is a gap between li and a elements
+      a {
+        background-color: #6eb7db;
+      }
+
     }
+
+  }
+
+  // maybe refactor, for when cursor is over a element, only way to get it to work without using !important
+  li.textcomplete-item a:hover {
+    background-color: #6eb7db;
   }
 
    a:hover {
     cursor: pointer; // SHOULD not modify
   }
+
 }
