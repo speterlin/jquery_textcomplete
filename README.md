@@ -38,13 +38,13 @@ In views:
 
 In `application.js`:
 
-    function addTextCompleteForHashtagsAndUsertags($textarea) {
+    function addTextcompleteForHashtagsAndUsertags($textarea) {
       $textarea.textcomplete([
         {
-          // Usertag strategy
-          match: /(\s|^)@([^\s]+)$/,
+          // Hashtag strategy
+          match: /(\s|^)#(\w+)$/,
           search: function (term, callback) {
-            $.getJSON('/users/autocomplete_usertag', { query: term })
+            $.getJSON('/posts/autocomplete_hashtag', { query: term })
               .done(function (resp) { callback(resp); })
               .fail(function ()     { callback([]);   });
           },
@@ -53,10 +53,10 @@ In `application.js`:
           }
         },
         {
-          // Hashtag strategy
-          match: /(\s|^)#(\w+)$/,
+          // Usertag strategy
+          match: /(\s|^)@([^\s]+)$/,
           search: function (term, callback) {
-            $.getJSON('/posts/autocomplete_hashtag', { query: term })
+            $.getJSON('/users/autocomplete_usertag', { query: term })
               .done(function (resp) { callback(resp); })
               .fail(function ()     { callback([]);   });
           },
@@ -82,8 +82,9 @@ In `routes.rb`:
 
     get 'autocomplete_usertag' => 'users#autocomplete_usertag', on: :collection
 
-
 For more options and style customization, please, see [jQuery Textcomplete documentation](https://github.com/yuku-t/jquery-textcomplete).
+
+To Note: z-index for dropdown is 100, therefore you must set z-index of surrounding elements below 100 if you want the textcomplete dropdown to appear above surrounding elements.
 
 <!-- ## Development
 
